@@ -8,7 +8,7 @@ This mod is designed as a **CoreMod** for TSPUD. It's designed to facilitate int
 
 ## Setup
 
-To setup your development environment, [clone the TSPUD Mod template](https://github.com/hyblocker/TSPUD-Mods-Template), and follow the setup instructions from there. Then download the [latest release]() and add it to your Libraries folder.
+To setup your development environment, [clone the TSPUD Mod template](https://github.com/hyblocker/TSPUD-Mods-Template), and follow the setup instructions from there. Then download the [latest release](https://github.com/hyblocker/TSPUD-Mods/raw/artifacts/ModThatLetsYouMod.dll) and add it to your `Libraries` folder.
 
 Edit the `Directory.Build.Props` file found in the project root, and add this section:
 
@@ -39,7 +39,6 @@ public class MySettings {
 - In your main file:
 
 ```cs
-
 public static MySettings modSettings;
 
 public override void OnApplicationStart()
@@ -48,6 +47,10 @@ public override void OnApplicationStart()
 }
 ```
 
-## Mods Menu
+### Mods Menu
 
 Currently WIP. Any bug reports will be ignored.
+
+### Player
+
+A helper class designed to make interfacing with `StanleyController` easier.
