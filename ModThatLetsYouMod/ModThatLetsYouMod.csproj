@@ -1,0 +1,8 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net472</TargetFramework>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<UseAltLibs>true</UseAltLibs>
+		<AssemblyVersion>0.0.1</AssemblyVersion>
+	</PropertyGroup>
+</Project>

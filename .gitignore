@@ -1,0 +1,11 @@
+.idea/
+.vs/
+bin/
+obj/
+/packages
+Libraries/*.dll
+Libraries/*.db
+Libraries/*.pdb
+Libraries/*.xml
+*.user
+/Artifacts

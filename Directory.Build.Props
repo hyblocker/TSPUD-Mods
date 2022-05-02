@@ -1,0 +1,197 @@
+<Project>
+	<ItemGroup Condition="'$(NoModReferences)' != 'true'">
+		<Reference Include="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\Unity.TextMeshPro.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.AnimationModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.AssetBundleModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.AudioModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.CoreModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.ImageConversionModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.IMGUIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.InputLegacyModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.InputLegacyModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.JSONSerializeModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.JSONSerializeModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.ParticleSystemModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.Physics2DModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.PhysicsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ScreenCaptureModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.ScreenCaptureModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SharedInternalsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.SharedInternalsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SubsystemsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.SubsystemsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TerrainModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.TerrainModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.TextRenderingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.UI.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.UIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.UnityWebRequestModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestWWWModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VideoModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.VideoModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VRModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.VRModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.XR.LegacyInputHelpers, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.XRModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\UnityEngine.XRModule.dll</HintPath>
+		</Reference>
+
+		<Reference Include="MelonLoader, Version=0.5.4.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\MelonLoader.dll</HintPath>
+		</Reference>
+		<Reference Include="0Harmony, Version=2.9.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\0Harmony.dll</HintPath>
+		</Reference>
+		<Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\Assembly-CSharp.dll</HintPath>
+		</Reference>
+		<Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\Assembly-CSharp-firstpass.dll</HintPath>
+		</Reference>
+		<Reference Include="SoftMask, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\SoftMask.dll</HintPath>
+		</Reference>
+		<Reference Include="com.rlabrecque.steamworks.net, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\com.rlabrecque.steamworks.net.dll</HintPath>
+		</Reference>
+		<Reference Include="InControl, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\InControl.dll</HintPath>
+		</Reference>
+		<Reference Include="Malee.ReorderableList, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\Malee.ReorderableList.dll</HintPath>
+		</Reference>
+		<Reference Include="SoftMask, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\SoftMask.dll</HintPath>
+		</Reference>
+
+		<!-- Consider using OpenXR instead of SteamVR? -->
+		<Reference Include="SteamVR, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\SteamVR.dll</HintPath>
+		</Reference>
+		<Reference Include="SteamVR_Actions, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\SteamVR_Actions.dll</HintPath>
+		</Reference>
+		<Reference Include="Valve.Newtonsoft.Json, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+			<SpecificVersion>false</SpecificVersion>
+			<Private>false</Private>
+			<HintPath>$(MsBuildThisFileDirectory)Libraries\Valve.Newtonsoft.Json.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<PropertyGroup>
+		<OutputPath>$(MsBuildThisFileDirectory)\Artifacts\$(Configuration)\</OutputPath>
+		<LangVersion>preview</LangVersion>
+	</PropertyGroup>
+</Project>

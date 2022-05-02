@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net472</TargetFramework>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<UseAltLibs>true</UseAltLibs>
+		<AssemblyVersion>0.0.1</AssemblyVersion>
+	</PropertyGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\ModThatLetsYouMod\ModThatLetsYouMod.csproj" />
+	  <ProjectReference Include="..\TSPUD_VR\TSPUD_VR.csproj" />
+	</ItemGroup>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="xcopy /Y /I /E &quot;$(SolutionDir)\Artifacts\$(Configuration)\net472\*.dll&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\The Stanley Parable Ultra Deluxe\Mods&quot;&#xD;&#xA;xcopy /Y /I /E &quot;$(SolutionDir)\Artifacts\$(Configuration)\net472\*.pdb&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\The Stanley Parable Ultra Deluxe\Mods&quot;" />
+	</Target>
+</Project>
