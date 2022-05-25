@@ -1,5 +1,5 @@
-﻿#if false
-using MelonLoader;
+﻿using MelonLoader;
+using ModThatLetsYouMod;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +18,7 @@ namespace TSPUD_VR
     {
         private const string SettingsCategory = "VR Mod";
         private const string EnabledSetting = "Enabled";
+        private static VR_Preferences config;
 
         /// <summary>
         /// Singleton
@@ -27,6 +28,12 @@ namespace TSPUD_VR
         public override void OnApplicationStart()
         {
             Instance = this;
+            Settings.Initialize(out config);
+
+            if (config.EnableVRPatches == false) {
+                MelonLogger.Msg($"VR is disabled. Skipping patches...");
+                return;
+            }
 
             // TODO: Try OpenXR ???
             // Idfk why OpenVR doesn't want to even init no matter what I do
@@ -52,11 +59,15 @@ namespace TSPUD_VR
 
         public override void OnUpdate()
         {
+            if (config.EnableVRPatches == false)
+                return;
             VRInputHelper.Update();
         }
 
         public override void OnApplicationLateStart()
         {
+            if (config.EnableVRPatches == false)
+                return;
             InitVR();
         }
 
@@ -69,7 +80,15 @@ namespace TSPUD_VR
             SteamVR_Actions.PreInitialize();
             SteamVR.Initialize(true);
 
+            // TODO: Detect if globalgamemanagers patch is required
+            UnityVRModePatcher.PatchGlobalGameManagers();
+
             // MelonLogger.Msg();
+
+            foreach(var device in XRSettings.supportedDevices)
+            {
+                MelonLogger.Msg($"XR Device: {device}");
+            }
 
             // Register the app with SteamVR
             MelonLogger.Msg("Registering game with SteamVR ...");
@@ -88,5 +107,3 @@ namespace TSPUD_VR
         }
     }
 }
-
-#endif

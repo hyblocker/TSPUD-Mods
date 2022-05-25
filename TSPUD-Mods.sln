@@ -3,18 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSPUD_VR", "TSPUD_VR\TSPUD_VR.csproj", "{C52EE83E-FF39-4810-9E84-F3335EC2910A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSPUD_VR", "TSPUD_VR\TSPUD_VR.csproj", "{C52EE83E-FF39-4810-9E84-F3335EC2910A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B548575C-4093-453E-85D4-C12AB33C1702}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.Props = Directory.Build.Props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModThatLetsYouMod", "ModThatLetsYouMod\ModThatLetsYouMod.csproj", "{70858E42-1D94-42E4-AF56-BC6837EB4DBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModThatLetsYouMod", "ModThatLetsYouMod\ModThatLetsYouMod.csproj", "{70858E42-1D94-42E4-AF56-BC6837EB4DBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstallMods", "InstallMods\InstallMods.csproj", "{66E5FA50-BD1F-48D1-A9AF-8D67D7037F07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstallMods", "InstallMods\InstallMods.csproj", "{66E5FA50-BD1F-48D1-A9AF-8D67D7037F07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreMods", "CoreMods\CoreMods.csproj", "{C2B2BEBF-756C-44B8-A40E-EF00520C1C70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreMods", "CoreMods\CoreMods.csproj", "{C2B2BEBF-756C-44B8-A40E-EF00520C1C70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSPUD-2-Sequels", "TSPUD-2-Sequels\TSPUD-2-Sequels.csproj", "{0B038670-8CF4-48CE-B096-9A937124F912}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{C2B2BEBF-756C-44B8-A40E-EF00520C1C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2B2BEBF-756C-44B8-A40E-EF00520C1C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2B2BEBF-756C-44B8-A40E-EF00520C1C70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B038670-8CF4-48CE-B096-9A937124F912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B038670-8CF4-48CE-B096-9A937124F912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B038670-8CF4-48CE-B096-9A937124F912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B038670-8CF4-48CE-B096-9A937124F912}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

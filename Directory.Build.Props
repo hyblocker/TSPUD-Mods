@@ -173,6 +173,7 @@
 		</Reference>
 
 		<!-- Consider using OpenXR instead of SteamVR? -->
+		<!--
 		<Reference Include="SteamVR, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
 			<SpecificVersion>false</SpecificVersion>
 			<Private>false</Private>
@@ -183,6 +184,7 @@
 			<Private>false</Private>
 			<HintPath>$(MsBuildThisFileDirectory)Libraries\SteamVR_Actions.dll</HintPath>
 		</Reference>
+		-->
 		<Reference Include="Valve.Newtonsoft.Json, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
 			<SpecificVersion>false</SpecificVersion>
 			<Private>false</Private>

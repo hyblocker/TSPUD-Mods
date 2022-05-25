@@ -1,6 +1,4 @@
-﻿#if false
-
-using HarmonyLib;
+﻿using HarmonyLib;
 using MelonLoader;
 using ModThatLetsYouMod;
 using System.Collections.Generic;
@@ -123,5 +121,3 @@ namespace TSPUD_VR.Patches
         }
     }
 }
-
-#endif

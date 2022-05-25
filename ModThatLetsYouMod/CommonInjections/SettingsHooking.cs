@@ -13,48 +13,62 @@ namespace ModThatLetsYouMod.CommonInjections
     {
         private static GameObject settingsMenuTabContainer;
         private static GameObject ModsTabPageItem;
-        private static GameObject OriginalTabPageContainerRoot;
-        private static GameObject ModsTabPageContainerRoot;
-        private static GameObject ModsTabPageContainer;
+        private static Transform OriginalTabPageContainerRoot;
+        private static Transform ModsTabPageContainerRoot;
+        private static Transform ModsTabPageContainer;
 
         private static string PageTitlesStr = "PageTitles (Toggles)";
         private static string ModsButtonStr = "Mods (PageButton)";
         private static string ModsPageStr = "Settings_Mods";
 
+        // Template controls
+        private static GameObject ToggleControl;
+        private static GameObject SliderControl;
+        private static GameObject ButtonControl;
+        private static GameObject KeybindControl;
+
         private static void TryFetchModsPage()
         {
+            var settingsRootContainer = settingsMenuTabContainer.transform.parent;
+
             if (ModsTabPageContainerRoot == null)
             {
                 // Try finding the mods page
-                ModsTabPageContainerRoot = GameObject.Find($"Settings/{ModsPageStr}");
+                ModsTabPageContainerRoot = settingsRootContainer.Find(ModsPageStr);
                 if (ModsTabPageContainerRoot == null) // If it's null, try creating it
                 {
-                    var GeneralTabPageContainer = GameObject.Find("Settings/Settings_General");
+                    var GeneralTabPageContainer = ModsTabPageContainerRoot = settingsRootContainer.Find("Settings_General");
                     OriginalTabPageContainerRoot = GeneralTabPageContainer;
-                    if (GeneralTabPageContainer != null)
+                    if (OriginalTabPageContainerRoot != null)
                     {
-                        ModsTabPageContainerRoot = GameObject.Instantiate(GeneralTabPageContainer);
+                        ModsTabPageContainerRoot = GameObject.Instantiate(OriginalTabPageContainerRoot.gameObject).transform;
 
                         // Re-parent it, and re-name too
-                        ModsTabPageContainerRoot.transform.parent = GeneralTabPageContainer.transform.parent;
-                        ModsTabPageContainerRoot.transform.name = ModsPageStr;
-                        ModsTabPageContainerRoot.transform.localScale = Vector3.one;
-                        ModsTabPageContainerRoot.transform.position = GeneralTabPageContainer.transform.position;
-                        ModsTabPageContainerRoot.SetActive(false);
+                        ModsTabPageContainerRoot.parent = OriginalTabPageContainerRoot.transform.parent;
+                        ModsTabPageContainer.SetSiblingIndex(OriginalTabPageContainerRoot.GetSiblingIndex() + 5); // 5th is mods
+                        ModsTabPageContainerRoot.name = ModsPageStr;
+                        ModsTabPageContainerRoot.localScale = Vector3.one;
+                        ModsTabPageContainerRoot.position = OriginalTabPageContainerRoot.transform.position;
+                        ModsTabPageContainerRoot.gameObject.SetActive(false);
                     }
+
+                    var AudioTabPageContainer = settingsRootContainer.Find("Settings_Audio");
+                    OriginalTabPageContainerRoot = AudioTabPageContainer;
                 }
             }
 
             if (ModsTabPageContainer == null)
             {
-                ModsTabPageContainer = GameObject.Find($"Settings/{ModsPageStr}/Settings_Mod_Mask");
+                ModsTabPageContainer = ModsTabPageContainerRoot.transform.Find("Settings_Mod_Mask");
                 if (ModsTabPageContainer == null)
                 {
-                    ModsTabPageContainer = GameObject.Find($"Settings/{ModsPageStr}/Settings_General_Mask");
+                    ModsTabPageContainer = ModsTabPageContainerRoot.transform.Find("Settings_General_Mask");
                     if (ModsTabPageContainer != null)
                     {
-                        ModsTabPageContainer.transform.name = "Settings_Mods_Mask";
-                        ModsTabPageContainer.transform.GetChild(0).transform.name = "Settings_Mods_Layout";
+                        ModsTabPageContainer.name = "Settings_Mods_Mask";
+                        // This object contains the actual components, we must modify these components to inject custom settings
+                        ModsTabPageContainer = ModsTabPageContainer.GetChild(0);
+                        ModsTabPageContainer.transform.name = "Settings_Mods_Layout";
                         ModConsole.Log("Successfully hooked Mods settings!", LogLevel.Verbose);
                     }
                 }
@@ -89,6 +103,7 @@ namespace ModThatLetsYouMod.CommonInjections
 
                     // Re-parent it, and re-name too
                     ModsTabPageItem.transform.parent = settingsMenuTabContainer.transform;
+                    ModsTabPageItem.transform.SetSiblingIndex(settingsMenuTabContainer.transform.GetSiblingIndex() + 4); // 5th is mods
                     ModsTabPageItem.transform.name = ModsButtonStr;
                     ModsTabPageItem.transform.localScale = Vector3.one;
                     var textComponents = ModsTabPageItem.GetComponentsInChildren<TextMeshProUGUI>(true);
@@ -125,8 +140,16 @@ namespace ModThatLetsYouMod.CommonInjections
                         toggleComponent.onValueChanged.AddListener(ActiveModPage);
                     }
 
-                    // Other tab menus dont hide our "forked" mods page, so let's fix it
-
+                    // Disable audio page on all other buttons, this is due to us cloning from audio
+                    var buttonToggles = ModsTabPageItem.transform.parent.GetComponentsInChildren<Toggle>();
+                    for (int i = 0; i < buttonToggles.Length; i++)
+                    {
+                        // Ignore audio settings
+                        if (buttonToggles[i] != null && buttonToggles[i].transform.name != "Audio (PageButton)")
+                        {
+                            buttonToggles[i].onValueChanged.AddListener(DisableOriginalPage);
+                        }
+                    }
                 }
             }
         }
@@ -148,23 +171,48 @@ namespace ModThatLetsYouMod.CommonInjections
                     toggleComponent.onValueChanged.RemoveAllListeners();
                     toggleComponent.onValueChanged.AddListener(ActiveModPage);
                 }
+
+                // Disable audio page on all other buttons, this is due to us cloning from audio
+                var buttonToggles = ModsTabPageItem.transform.parent.GetComponentsInChildren<Toggle>();
+                for (int i = 0; i < buttonToggles.Length; i++)
+                {
+                    // Ignore audio settings
+                    if (buttonToggles[i] != null && buttonToggles[i].transform.name != "Audio (PageButton)")
+                    {
+                        ModConsole.Log($"[{i}]:: { buttonToggles[i].transform.name }");
+                        buttonToggles[i].onValueChanged.AddListener(DisableOriginalPage);
+                    }
+                }
             }
         }
 
         internal static void ActiveModPage(bool state)
         {
+            ModConsole.Log("Activating mods page!");
             TryFetchModsPage();
 
             if (ModsTabPageContainerRoot != null)
             {
-                ModsTabPageContainerRoot.SetActive(state);
+                ModsTabPageContainerRoot.gameObject.SetActive(state);
                 if (OriginalTabPageContainerRoot != null)
                 {
-                    OriginalTabPageContainerRoot.SetActive(!state);
+                    OriginalTabPageContainerRoot.gameObject.SetActive(!state);
                 }
             }
         }
-        
+
+        // A hack workaround to fix the fact that not all pages disable the mods overlay
+        internal static void DisableOriginalPage(bool state)
+        {
+            // ModConsole.Log("Disabling mods page!");
+            TryFetchModsPage();
+
+            if (ModsTabPageContainerRoot != null)
+            {
+                OriginalTabPageContainerRoot.gameObject.SetActive(!state);
+            }
+        }
+
         // TODO: Probably evolve into a struct or something
         public static void RegisterSettingsCategory(string category)
         {
@@ -172,6 +220,17 @@ namespace ModThatLetsYouMod.CommonInjections
         }
 
         // TODO: Shorthand methods for creating common controls
+
+
+        public static void CreateHeader(string title)
+        {
+
+        }
+
+        public static void CreateToggle(string title, ref bool toggleValue, Event callback)
+        {
+
+        }
 
         // TODO: Controls w/ rebinding
     }
