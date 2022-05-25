@@ -9,3 +9,7 @@
 ## CoreMods v0.0.1 - [Download](https://github.com/hyblocker/TSPUD-Mods/raw/artifacts/CoreMods.dll)
 
 > A list of core mods, which are too small to fit into their own mod. Currently only enables debug mode. Can be toggled in it's settings json file. UI is planned.
+> 
+## TSP2 Sequals v1.0.0 - [Download](https://github.com/hyblocker/TSPUD-Mods/raw/artifacts/TSPUD-2-Sequels.dll)
+
+> A mod which allows the number on TSP2 to change with as you increment it after unlocking epilogue.
